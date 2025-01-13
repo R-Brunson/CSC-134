@@ -20,4 +20,4 @@ Answer: Gengar
 # Notes for 1/13/25
 We made a codespace
 
-TODO: look at the public website to see the changes
+TODO: look at the public website to see the changes, looked over commit and sync
