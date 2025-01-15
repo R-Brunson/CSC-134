@@ -16,6 +16,6 @@ int main()
 {
    cout << "Hello, World!" << endl;
    cout << "Codespaces exist" << endl;
-
+   cout << endl;
    return 0;
 }
