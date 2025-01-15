@@ -15,6 +15,7 @@ using namespace std;
 int main()
 {
    cout << "Hello, World!" << endl;
-   count << "Codespaces exist";
+   cout << "Codespaces exist" << endl;
+
    return 0;
 }
