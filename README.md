@@ -28,3 +28,5 @@ It was a snowday and class was hosted online through the FTCC TeacherBot YouTube
 - Never put secret information such as where you live or your API keys on GitHub.
 - Can drag and drop .md files from apps like NotePad++ into GitHub and have them displayed. [.md = Markdown]
 - files like MP3 or MP4 can only be stored on GitHub, not much can be done with it on GitHub
+- Every time you do an AI generation, it does two and picks the best one.
+- 
