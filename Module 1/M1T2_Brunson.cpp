@@ -1,6 +1,6 @@
 // CSC 134
 // M1T2
-// Your Name
+// Ricky Brunson
 // 1/26/25
 
 #include <iostream>
