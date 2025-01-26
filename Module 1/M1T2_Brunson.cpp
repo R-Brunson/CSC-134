@@ -11,7 +11,7 @@ int main()
 {
    cout << "Ricky Brunson" << endl;
    cout << "Associate In Engineering" << endl;
-   cout << "I like to play instruments" << endl;
+   cout << "I like to play instruments, such as the French Horn" << endl;
 
    return 0;
 }
