@@ -13,10 +13,8 @@ int main() // Program is made to stimulate an apple orchard.
     int apples = 100; // numbers of apples owned
     double pricePerApple = 0.25; // Price per apple
 
-// Calculated the total price of the apples
-    //
-
-
+// Calculates the total price of the apple purchase
+    double totalPrice = apples * pricePerApple;
 
 // prints all the information about the orchard
     cout << "Welcome to " << name;
@@ -24,5 +22,9 @@ int main() // Program is made to stimulate an apple orchard.
     cout << "We have " << apples;
     cout << " apples in stock" << endl;
     cout << "Apples are currently $";
-    cout << pricePerApple << " each." << endl; 
+    cout << pricePerApple << " each." << endl;
+
+// Prints the totalPrice
+    cout << "If you want them all, that will be $" << totalPrice << endl;
+    cout << endl; 
 }
