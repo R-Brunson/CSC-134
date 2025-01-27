@@ -5,7 +5,6 @@
 
 #include <iostream>
 using namespace std;
-// Program is made to simulate an apple orchard.
 
 int main() // Program is made to stimulate an apple orchard.
 {
