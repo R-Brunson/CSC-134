@@ -26,4 +26,6 @@ int main() // Program is made to stimulate an apple orchard.
 // Prints the totalPrice
     cout << "If you want them all, that will be $" << totalPrice << endl;
     cout << endl; 
+
+    return 0; // no errors
 }
