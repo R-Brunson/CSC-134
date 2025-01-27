@@ -1,0 +1,28 @@
+// CSC 134
+// Hello World
+// R-Brunson
+// 1/27/25
+
+#include <iostream>
+using namespace std;
+// Program is made to simulate an apple orchard.
+
+int main() // Program is made to stimulate an apple orchard.
+{
+    string name = "Ricky Brunson"; // Owner's Name
+    int apples = 100; // numbers of apples owned
+    double pricePerApple = 0.25; // Price per apple
+
+// Calculated the total price of the apples
+    //
+
+
+
+// prints all the information about the orchard
+    cout << "Welcome to " << name;
+    cout << "'s apple orchard." << endl;
+    cout << "We have " << apples;
+    cout << " apples in stock" << endl;
+    cout << "Apples are currently $";
+    cout << pricePerApple << " each." << endl; 
+}
