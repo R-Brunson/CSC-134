@@ -9,8 +9,9 @@ using namespace std;
   
 int main()
 {
-   cout << "Ricky Brunson" << endl;
-   cout << "Associate In Engineering" << endl;
+   cout << "Hello";
+   cout << "I'm Ricky Brunson" << endl;
+   cout << "I am pursuing an Associate In Engineering" << endl;
    cout << "I like to play instruments, such as the French Horn" << endl;
 
    return 0;
