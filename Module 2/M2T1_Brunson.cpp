@@ -49,7 +49,7 @@ int main() // Program is made to stimulate an apple orchard.
 
 // Finish transaction
     cout << "Easy enough, that will be $" << transactionPrice;
-    cout << "Thank you and have a wonderful day!"
+    cout << "Thank you and have a wonderful day!" << endl;
     cout << endl;
 
     return 0; // no errors
