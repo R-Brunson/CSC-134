@@ -17,8 +17,12 @@ int main()
     cout << " came out in " << publishYear;
     cout << ", and had a worldwide gross of around $" << movieGross;
     cout << "million dollars." << endl;
+    cout << endl; 
 
     //need to add facts, ideas are the studio who released them, ratings, ect
+    cout << "The movie " << movieName << " was published by Pixar Animation Studios." << endl;
+    cout << "Directed by Andrew Stanton." << endl;
+    cout << "The run time of movie " << movieName << " is 1 hour and 38 minutes." << endl; 
 
     cout << endl; 
     return 0; // no errors
