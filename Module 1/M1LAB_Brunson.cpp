@@ -1,6 +1,6 @@
 // CSC 134
-// Hello World
-// R-Brunson
+// M1Lab Apple Orchard
+// Ricky Brunson
 // 1/27/25
 
 #include <iostream>
