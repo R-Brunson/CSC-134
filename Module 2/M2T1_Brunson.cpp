@@ -4,6 +4,7 @@
 // 1/29/25
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() // Program is made to stimulate an apple orchard.
@@ -12,8 +13,17 @@ int main() // Program is made to stimulate an apple orchard.
     int apples = 100; // numbers of apples owned
     double pricePerApple = 0.25; // Price per apple
 
-// Calculates the total price of the apple purchase
+// new variables M2T1
+    string user_name; // who is buying
+    int apples_to_buy; // how many?
+
+// Calculates the total price of all apples in stock
     double totalPrice = apples * pricePerApple;
+
+// Greets Customer
+    cout << "Hello! What's your name?";
+    cin >> user_name;
+    cout << "Thanks for coming by, " << user_name << "!" << endl;
 
 // prints all the information about the orchard
     cout << "Welcome to " << farm_name;
@@ -23,9 +33,23 @@ int main() // Program is made to stimulate an apple orchard.
     cout << "Apples are currently $";
     cout << pricePerApple << " each." << endl;
 
-// Prints the totalPrice
+// Sets cout for doubles to be 2 decimal places
+    cout << setprecision(2) << fixed;
+
+// Prints the totalPrice of all apples
     cout << "If you want them all, that will be $" << totalPrice << endl;
-    cout << endl; 
+    cout << endl;
+
+// Transaction beginning
+    cout << "How many apples would you like to buy?";
+    cin >> apples_to_buy;
+
+// Calculating price of transaction
+    double transactionPrice = apples_to_buy * pricePerApple;
+
+// Finish transaction
+    cout << "Easy enough, that will be $" << transactionPrice;
+    cout << endl;
 
     return 0; // no errors
 }
