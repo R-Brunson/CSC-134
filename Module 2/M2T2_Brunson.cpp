@@ -10,11 +10,36 @@ using namespace std;
 int main() // simple receipt calculator
 {
 // Variables
-double mealPrice = 5.99; // Price of meal
-double taxRate = 0.08; // 8% tax rate
-double taxAmount = 
+    string storeName = "\"The $5.99 Diner\"";
+    int numMeal; // Number of meals ordered
+    double mealPrice = 5.99; // Price of meal
+    double mealTotal; // How much the total meal costs without tax
+    double taxRate = 0.08; // 8% tax rate
+    double taxAmount; // $ tax owed
+    double total; // Meal + Tax
 
+// taking customer's order and 
+    cout << "Welcome to " << storeName << "." << endl;
+    cout << "At " << storeName << ", we sell all of our meals at $" << mealPrice << "!" << endl;
+    cout << "Please take a look at the menue and write down what you'd like." << endl;
+    cout << "How many meals would you like? ";
+    cin >> numMeal;
+    cout << endl;
 
+// Calculate meal total, tax amount, and total
+    mealTotal = numMeal * mealPrice;
+    taxAmount = taxRate * mealTotal;
+    total = mealTotal + taxAmount;
 
+// Printing Reciept
+    cout << setprecision(2) << fixed;
+    cout << "Thank you for dining at " << storeName << endl;
+    cout << "Your meal total is $" << mealTotal << endl;
+    cout << "The tax is $" << taxAmount << endl;
+    cout << "And you total amount billed will be $" << total << endl;
+    cout << endl;
+    cout << "Have a good day!";
+
+cout << endl;
 return 0;
 }
