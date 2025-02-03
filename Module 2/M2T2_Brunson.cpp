@@ -31,12 +31,16 @@ int main() // simple receipt calculator
     taxAmount = taxRate * mealTotal;
     total = mealTotal + taxAmount;
 
-// Printing Reciept
+// Printing Receipt
     cout << setprecision(2) << fixed;
-    cout << "Thank you for dining at " << storeName << endl;
-    cout << "Your meal total is $" << mealTotal << endl;
-    cout << "The tax is $" << taxAmount << endl;
-    cout << "And you total amount billed will be $" << total << endl;
+    cout << "Thank you for dining at " << storeName << ", here is your receipt!" << endl;
+    cout << endl;
+    cout << "The $5.99 Diner" << endl;
+    cout << "--------------------------" << endl;
+    cout << "Subtotal:\t$" << mealTotal << endl;
+    cout << "Tax:\t\t$" << taxAmount << endl;
+    cout << "--------------------------" << endl;
+    cout << "Total:\t\t$" << total << endl;
     cout << endl;
     cout << "Have a good day!";
 
