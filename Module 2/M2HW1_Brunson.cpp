@@ -9,7 +9,8 @@ using namespace std;
 
 int main()
 {
-// QUESTION 1 (Banking Transactions) <-----------------------------------------------
+    cout << setprecision(2) << fixed;
+// QUESTION 1 - Banking Transactions - <-----------------------------------------------
 
 
 
