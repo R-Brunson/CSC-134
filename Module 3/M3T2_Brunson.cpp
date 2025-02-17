@@ -1,5 +1,5 @@
 // CSC 134
-// M3T1 - Area calculator thingy
+// M3T2 - Area calculator thingy - extended
 // Ricky Brunson
 // 2/17/25
 
@@ -32,5 +32,18 @@ int main()
     cout << "The area of your second rectangle is: " << area2 << endl;
     cout << endl;
 
+// Which is larger?
+    if (area1 > area2) {
+    cout << "The first rectangle is larger." << endl;
+    cout << endl;
+}
+    else if (area1 < area2) {
+    cout << "The second rectangle is larger." << endl;
+    cout << endl;
+}
+    else {
+    cout << "They're both the same size." << endl;
+    cout << endl;
+}
     return 0;
 }
