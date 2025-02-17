@@ -12,7 +12,7 @@ using namespace std;
   
 int main() {
     const int SIDES = 20; 
-    int seed = time(0);  
+    int seed = time(0);  // sets are seed as a changing variable (time) and use it to randomise rolls
     srand(seed); // seed the random number
 
 // roll a few times
