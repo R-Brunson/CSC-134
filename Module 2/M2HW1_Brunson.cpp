@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+    
     cout << setprecision(2) << fixed;
 // QUESTION 1 - Banking Transactions - <-----------------------------------------------
     cout << "Question #1" << endl;
@@ -54,7 +55,7 @@ int main()
     account_balance = account_balance - withdraw;
 
     cout << "Your New Account Balance is:\t$" << account_balance << endl;
-    cout << "----------------------------------------------------" << endl;
+    cout << "--------------------------------------------------" << endl;
     cout << endl;
 
 // QUESTION 2 - Updated Crate Storage Calculator - <-----------------------------------------------
@@ -99,18 +100,54 @@ int main()
     cout << "Customer's Price:\t$" << charge << endl;
     cout << "Profit:\t\t\t$" << profit << endl;
     cout << "----------------------------------------------" << endl;
-cout << endl;
-return 0;
+    cout << endl;
 
-// QUESTION 2 - Pizza - <-----------------------------------------------
+// QUESTION 3 - Pizza - <-----------------------------------------------
+    cout << "Question 3" << endl;
+    cout << endl;
+    cout << setprecision(0) << fixed;
 
+    // Variables for pizza, slices, and guests
+    int num_pizza, slices_per_pizza, num_visitors;
 
+    // Input Prompt
+    cout << "Enter the number of pizzas: ";
+    cin >> num_pizza;
+    cout << "Enter the number of slices per pizza: ";
+    cin >> slices_per_pizza;
+    cout << "Enter the number of visitors: ";
+    cin >> num_visitors;
+    cout << endl;
 
+    // Calculations
+    int total_slices = num_pizza * slices_per_pizza;
+    int slices_needed = num_visitors * 3;
+    int slices_leftover = total_slices - slices_needed;
 
+    // Output
+    cout << "Total slices available: " << total_slices << endl;
+    cout << "Total slices needed: " << slices_needed << endl;
+    cout << "Slices left over: " << slices_leftover << endl;
 
+    cout << "----------------------------------------------" << endl;
+    cout << endl;
 
+// QUESTION 4 - Cheer - <-----------------------------------------------
+    cout << "Question 4" << endl;
+    cout << endl;
 
+    // Variable crafting
+    string school = "FTCC";
+    string team = "Trojans";
+    string letsGo = "Let's Go ";
+    string cheerOne = letsGo + school;
+    string cheerTwo = letsGo + team;
 
+    cout << cheerOne << endl;
+    cout << cheerOne << endl;
+    cout << cheerOne << endl;
+    cout << cheerTwo << endl;
 
+    cout << endl;
     return 0;
 }
