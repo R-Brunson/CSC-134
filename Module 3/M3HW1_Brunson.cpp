@@ -13,7 +13,11 @@ int main()
     cout << "Question 1" << endl;
     cout << endl;
 
+    // Variable
+    string 
 
+    // Introduction
+    cout << "Hello, I’m a C++ program!" 
 
 // QUESTION 2 - Receipt Calculator - <-----------------------------------------------
 cout << "Question 2" << endl;
