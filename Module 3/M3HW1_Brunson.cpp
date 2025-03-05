@@ -9,11 +9,51 @@
 #include <ctime>
 using namespace std;
 
-
+void question1();
+void question2();
+void question3();
+void question4();
 
 int main()
 {
-// QUESTION 1 - Chat Bot - <-----------------------------------------------
+    int homework;
+    bool keep_going = true;
+
+    while (true == keep_going) {
+        cout << "M3HW1" << endl;
+        cout << "1. Question 1" << endl;
+        cout << "2. Question 2" << endl;
+        cout << "3. Question 3" << endl;
+        cout << "4. Question 4" << endl;
+        cout << "0. Exit" << endl;
+        
+        cin >> homework;
+        if (1 == homework) {
+            question1();
+        }
+        else if (2 == homework) {
+            question2();
+        }
+        else if (3 == homework) {
+            question3();
+        }
+        else if (4 == homework) {
+            question4();
+        }
+        else if (0 == homework) {
+            cout << "Bye!" << endl;
+            keep_going = false; // exit ASAP
+        }
+        else {
+            cout << "Not a valid choice." << endl;
+        }
+    }
+    return 0; 
+}
+
+void question1() {
+    // QUESTION 1 - Chat Bot - <-----------------------------------------------
+    cout << endl;
     cout << "Question 1 - Chat Bot" << endl;
     cout << endl;
 
@@ -36,8 +76,10 @@ int main()
     }
 
     cout << endl;
-    
-// QUESTION 2 - Receipt Calculator - <-----------------------------------------------
+}
+void question2() {
+    // QUESTION 2 - Receipt Calculator - <-----------------------------------------------
+    cout << endl;
     cout << "Question 2 - Receipt Calculator" << endl;
     cout << endl;
     cout << setprecision(2) << fixed;
@@ -83,9 +125,11 @@ int main()
     }
 
     cout << endl;
-
-// QUESTION 3 - CYOA - <-----------------------------------------------
+}
+void question3() {
+    // QUESTION 3 - CYOA - <-----------------------------------------------
     // used Copilot to generate adventure game story and outcomes
+    cout << endl;
     cout << "Question 3 - CYOA" << endl;
     cout << endl;
 
@@ -146,9 +190,10 @@ int main()
             cout << endl;
         } 
     }
-    
-
-// QUESTION 4 - Math Practice - <-----------------------------------------------
+}
+void question4() {
+    // QUESTION 4 - Math Practice - <-----------------------------------------------
+    cout << endl;
     cout << "Question 4 - Math Practice" << endl;
     cout << endl;
 
@@ -179,7 +224,4 @@ int main()
         cout << "The Correct Answer was " << answer << endl;
         cout << endl;
     }
-
-
-    return 0;
 }
