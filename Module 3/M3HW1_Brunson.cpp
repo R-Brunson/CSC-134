@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
+#include <ctime>
 using namespace std;
 
 int main()
@@ -101,7 +103,7 @@ int main()
     cin >> path;
 
     // The beginning of the maze of if statements
-    if (path == "left" && path == "Left") { // left path
+    if (path == "left" || path == "Left") { // left path
         cout << endl;
         cout << "You walk for a while and come across a sleeping dragon." << endl;
         cout << endl;
@@ -114,13 +116,15 @@ int main()
         if (coya_choice == 1) { // option 1 -- left path
             cout << endl;
             cout << "Game Over: The dragon wakes up and catches you" << endl;
+            cout << endl;
         }
         else if (coya_choice == 2) { // option 2 -- left path
             cout << endl;
             cout << "Defeat: The dragon is too strong, and you are defeated." << endl;
+            cout << endl;
         }
     }
-    else if (path == "right" && path == "Right") { // right path
+    else if (path == "right" || path == "Right") { // right path
         cout << endl;
         cout << "You find a hidden treasure chest." << endl;
         cout << endl;
@@ -133,10 +137,12 @@ int main()
         if (coya_choice == 1) { // option 1 -- right path
             cout << endl;
             cout << "Victory: The chest contains a magical artifact that grants you victory." << endl;
+            cout << endl;
         }
         else if (coya_choice == 2) { // option 2 -- right path
             cout << endl;
             cout << "Game Over: You miss out on the treasure and get lost in the forest." << endl;
+            cout << endl;
         } 
     }
     
