@@ -9,9 +9,10 @@
 #include <ctime>
 using namespace std;
 
+
+
 int main()
 {
-    /*
 // QUESTION 1 - Chat Bot - <-----------------------------------------------
     cout << "Question 1 - Chat Bot" << endl;
     cout << endl;
@@ -82,7 +83,7 @@ int main()
     }
 
     cout << endl;
-*/
+
 // QUESTION 3 - CYOA - <-----------------------------------------------
     // used Copilot to generate adventure game story and outcomes
     cout << "Question 3 - CYOA" << endl;
@@ -146,11 +147,38 @@ int main()
         } 
     }
     
+
 // QUESTION 4 - Math Practice - <-----------------------------------------------
     cout << "Question 4 - Math Practice" << endl;
     cout << endl;
 
+    // Randomizer
+    int seed = time(0);
+    srand(seed);
 
+    // Variables/Calculations
+    const int MAX = 10; // numbers from 1-10
+    int num1, num2, answer, user_answer;
+    num1 = (rand() % MAX) + 1; // Divide by MAX, and just keep the remainder
+    num2 = (rand() % MAX) + 1; // Divide by MAX, and just keep the remainder
+    answer = num1 + num2;
+
+    // User prompt
+    cout << "What is " << num1 << " plus " << num2 << "?" << endl;
+    cin >> user_answer;
+
+    // if statements
+    if (user_answer == answer) {
+        cout << endl;
+        cout << "Correct!";
+        cout << endl;
+    }
+    else {
+        cout << endl;
+        cout << "Incorrect." << endl;
+        cout << "The Correct Answer was " << answer << endl;
+        cout << endl;
+    }
 
 
     return 0;
