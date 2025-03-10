@@ -38,7 +38,32 @@ int main() {
         num++;
     }
 
+    cout << endl;
+    //optional 3
+    bool is_valid = false;
+    int choice;
 
+    while (is_valid == false) {
+        cout << "Press 1 or 2 to finish." << endl;
+        cin >> choice;
+        cout << endl;
+        if (choice == 1) {
+            cout << "You picked 1" << endl;
+            is_valid = true;
+            cout<< endl;
+        }
+        else if (choice == 2) {
+            cout << "You picked 2" << endl;
+            is_valid = true;
+            cout<< endl;
+        }
+        else {
+            cout << "Sorry, not valid. Try again." << endl;
+            cout<< endl;
+        }
+    }
+    cout << "Goodbye" << endl;
+    cout << endl;
     return 0;
 }
 
