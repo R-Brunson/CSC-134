@@ -8,7 +8,7 @@
 
 using namespace std;
   
-// Purpose: Show how basic functions work
+// Purpose: Show how basic functions work.
 
 // Declare functions here, so main() knows they exist
 void show_message();
