@@ -1,7 +1,7 @@
 // CSC 134
-// M4T1 - saying hi 5 times, table of squares
+// M5T1 - Basic Functions
 // Ricky Brunson
-// 3/10/25
+// 3/26/25
 
 #include <iostream>
 #include <iomanip>
