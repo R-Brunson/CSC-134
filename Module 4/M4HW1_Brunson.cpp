@@ -35,7 +35,7 @@ while (valid_answer == false) {
 }
 
 cout << "The " << initial_number << " Times Table" << endl;
-cout << "----------------------------" << endl;
+cout << "-----------------------------" << endl;
 
 for (int i = 1; i <= 12; i++) {
     answer = initial_number * i;
