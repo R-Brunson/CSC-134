@@ -65,6 +65,7 @@ int main() {
         }
     } */
 
+    question2();
 
 }
 
@@ -103,16 +104,19 @@ void question1() {
 }
 
 //Question 2
-/*
+
 void question2() {
 
 }
 
 //Question 3
 void question3() {
+    const int LIMIT = 10;
+    int roman_numerals [LIMIT] = {"No Roman Numeral for 0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+
 
 }
-
+/*
 //Question 4
 void question4() {
 
