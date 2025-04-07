@@ -5,17 +5,17 @@
 
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
 // Question declaration
 void question1();
-/*
 void question2();
 void question3();
 void question4();
 void question5();
-*/
+
 
 int main() {
     /*
@@ -65,7 +65,7 @@ int main() {
         }
     } */
 
-    question2();
+    question3();
 
 }
 
@@ -111,9 +111,36 @@ void question2() {
 
 //Question 3
 void question3() {
+    int number;
     const int LIMIT = 10;
     string roman_numerals [LIMIT] = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
 
+    bool continue_input = true;
+
+    cout << "This program helps you with finding Roman Numerals for number 1 to 10." << endl;
+    cout << "Fun Fact: There is no Roman Numeral for 0." << endl;
+    cout << endl;
+
+    while (continue_input == true) {
+        cout << "What number 1-10 would you like a Roman Numeral for? Enter 0 to quit. ";
+        cin >> number;
+        
+        if (number > 0 && number <= 10) {
+            cout << "The Roman Numeral for " << number << " is " << roman_numerals[number-1] << endl;
+            cout << endl;
+        }
+        else if (number == 0) {
+            cout << endl;
+            cout << "Bye!" << endl;
+            continue_input = false; 
+        }
+        else {
+            cout << "Invalid Answer. Please Try Again" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        
+    } 
 
 }
 /*
