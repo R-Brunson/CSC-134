@@ -136,12 +136,11 @@ void question3() {
         }
         else {
             cout << "Invalid Answer. Please Try Again" << endl;
+            cout << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
-        
-    } 
-
+        } 
+    }
 }
 /*
 //Question 4
