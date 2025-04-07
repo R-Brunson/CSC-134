@@ -112,7 +112,7 @@ void question2() {
 //Question 3
 void question3() {
     const int LIMIT = 10;
-    int roman_numerals [LIMIT] = {"No Roman Numeral for 0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+    string roman_numerals [LIMIT] = {"No Roman Numeral for 0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
 
 
 }
