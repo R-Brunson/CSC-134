@@ -13,7 +13,12 @@ using namespace std;
 void question1();
 void question2();
 void question3();
+
 void question4();
+void circle();
+void rectangle();
+void triangle();
+
 void question5();
 
 
@@ -62,10 +67,12 @@ int main() {
         else {
             cout << endl;
             cout << "Not a valid choice." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     } */
 
-    question2();
+    question4();
 
 }
 
@@ -104,7 +111,6 @@ void question1() {
 }
 
 //Question 2
-
 void question2() {
     bool input_validation = false;
     double length, width, height, area;
@@ -133,9 +139,10 @@ void question2() {
         } 
     }
     
-     area = length * width * height; 
-     cout << "The area of a hypperrectangle with the dimensions " << length << " by " << width << " by " << height << " is " << area << endl;
-     cout << endl; 
+    cout << setprecision(2) << fixed;
+    area = length * width * height; 
+    cout << "The area of a hypperrectangle with the dimensions " << length << " by " << width << " by " << height << " is " << area << endl;
+    cout << endl; 
 }   
 
 //Question 3
@@ -171,12 +178,144 @@ void question3() {
         } 
     }
 }
-/*
+
 //Question 4
 void question4() {
+bool repeat = true;
+int choice;
+
+while (repeat == true) {
+cout << "Geometry Calculator" << endl;
+cout << endl;
+cout << "1. Calculate the area of a Circle" << endl;
+cout << "2. Calculate the area of a Rectangle" << endl;
+cout << "3. Calculate the area of a Triangle" << endl;
+cout << "4. Quit" << endl;
+cout << endl;
+cout << "Enter your choice (1-4): ";
+cin >> choice;
+cout << endl;
+
+if (1 == choice) {
+    circle();
+}
+else if (2 == choice) {
+    rectangle();
+}
+else if (3 == choice) {
+    triangle();
+}
+else if (4 == choice) {
+    cout << endl;
+    cout << "Exiting Question 4." << endl;
+    cout << endl;
+    repeat = false;
+}
+else {
+    cout << "The valid choices are 1 through 4. Run the program again and select one of those." << endl;
+    cout << endl;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
 
 }
 
+}
+
+void circle() {
+double pi = 3.14159;
+double radius, sq_radius, area;
+bool validation = false;
+
+cout << endl;
+
+while (validation == false) {
+    cout << "This program requires the radius of your circle to calculate the area of the circle." << endl;
+    cout << "Enter the circle's radius: ";
+    cin >> radius;
+
+    if (radius >= 0) {
+        validation = true;
+    }
+    else {
+        cout << endl;
+        cout << "The radius cannot be less than zero. Try Again." << endl;
+        cout << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
+
+sq_radius = radius * radius;
+area = pi * sq_radius;
+
+cout << endl;
+cout << "The area of a circle with the radius of " << radius << " is " << area << endl;
+cout << endl;  
+}
+void rectangle() {
+    double length, width, area;
+    bool validation = false;
+    
+    cout << endl;
+    
+    while (validation == false) {
+        cout << "This program requires the length and width of your rectangle to calculate the area of the rectangle." << endl;
+        cout << "Length: ";
+        cin >> length;
+        cout << "Width: ";
+        cin >> width;
+        cout << endl;
+    
+        if (length > 0 && width > 0) {
+            validation = true;
+        }
+        else {
+            cout << endl;
+            cout << "The sides must be greater than 0. Try Again." << endl;
+            cout << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+    
+    area = length * width;
+    
+    cout << "The area of a rectangle with the dimesions of " << length << " by " << width << " is " << area << endl;
+    cout << endl;  
+}
+void triangle() {
+    double base, height, area;
+    bool validation = false;
+    
+    cout << endl;
+    
+    while (validation == false) {
+        cout << "This program requires the base and height of your triangle to calculate the area of the triangle." << endl;
+        cout << "Base: ";
+        cin >> base;
+        cout << "Height: ";
+        cin >> height;
+        cout << endl;
+    
+        if (base >= 0 && height >= 0) {
+            validation = true;
+        }
+        else {
+            cout << endl;
+            cout << "Only enter positive values for base and height. Try Again" << endl;
+            cout << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
+    
+    area = (base * height) / 2;
+    
+    cout << "The area of the triangle is " << area << endl;
+    cout << endl;
+}
+/*
 //Question 5
 void question5() {
 
