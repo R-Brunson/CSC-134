@@ -315,9 +315,8 @@ void triangle() {
     cout << "The area of the triangle is " << area << endl;
     cout << endl;
 }
-/*
+
 //Question 5
 void question5() {
 
 }
-*/
