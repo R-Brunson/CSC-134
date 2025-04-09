@@ -65,7 +65,7 @@ int main() {
         }
     } */
 
-    question3();
+    question2();
 
 }
 
@@ -106,8 +106,37 @@ void question1() {
 //Question 2
 
 void question2() {
+    bool input_validation = false;
+    double length, width, height, area;
 
-}
+    cout << "This program will help you calculate the area of a three dimensional hypperrectangle." << endl;
+    cout << "No side can be zero or less. Please input the following." << endl;
+
+    while (input_validation == false) {
+        cout << "Length: ";
+        cin >> length;
+        cout << "Width: ";
+        cin >> width;
+        cout << "Height: ";
+        cin >> height;
+
+        if (length > 0 && width > 0 && height > 0) {
+            input_validation = true;
+            cout << endl;
+        }
+        else {
+            cout << "One of your measurements had an invalid input. Please Try Again" << endl;
+            cout << "NO SIDE CAN BE 0 OR LESS!" << endl;
+            cout << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } 
+    }
+    
+     area = length * width * height; 
+     cout << "The area of a hypperrectangle with the dimensions " << length << " by " << width << " by " << height << " is " << area << endl;
+     cout << endl; 
+}   
 
 //Question 3
 void question3() {
