@@ -59,6 +59,7 @@ int main() {
         else if (0 == homework) {
             cout << endl;
             cout << "Bye!" << endl;
+            cout << endl;
             keep_going = false; // exit ASAP
         }
         else {
