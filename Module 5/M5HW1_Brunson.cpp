@@ -23,7 +23,7 @@ void question5();
 
 
 int main() {
-    /*
+    
     int homework;
     bool keep_going = true;
 
@@ -56,9 +56,6 @@ int main() {
         else if (5 == homework) {
             question5();
         }
-        else if (6 == homework) {
-            question6();
-        }
         else if (0 == homework) {
             cout << endl;
             cout << "Bye!" << endl;
@@ -70,10 +67,7 @@ int main() {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-    } */
-
-    question4();
-
+    } 
 }
 
 // Question 1
@@ -315,8 +309,32 @@ void triangle() {
     cout << "The area of the triangle is " << area << endl;
     cout << endl;
 }
-
 //Question 5
 void question5() {
+    int mph, hours, distance_traveled;
+    bool validation = false;
 
+    while (validation == false) {
+        cout << "What is the speed of the vehicle in mph? ";
+        cin >> mph;
+        cout << "How many hours has it traveled? ";
+        cin >> hours;
+        cout << endl;
+
+        if (mph >= 0 && hours >= 1) {
+            validation = true;
+        }
+        else {
+            cout << "Please check your inputs. Speed cannot be negative. Time must be 1 hour or above." << endl;
+            cout << endl;
+        }
+
+    }
+    cout << "Hour    Distance Traveled" <<endl;
+    cout << "-----------------------------" << endl;
+    for (int i = 1; i <= hours; i++) {
+        distance_traveled = i * mph;
+        cout << " " << i << "\t\t" << distance_traveled << endl;
+    }
+    cout << endl;
 }
