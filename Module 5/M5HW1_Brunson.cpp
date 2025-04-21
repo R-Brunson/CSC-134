@@ -156,7 +156,7 @@ void question3() {
         cout << "What number 1-10 would you like a Roman Numeral for? Enter 0 to quit. ";
         cin >> number;
         
-        if (number > 0 && number <= 10) {
+        if (number > 0 && number <= LIMIT) {
             cout << "The Roman Numeral for " << number << " is " << roman_numerals[number-1] << endl;
             cout << endl;
         }
