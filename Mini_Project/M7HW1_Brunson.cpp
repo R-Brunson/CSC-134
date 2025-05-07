@@ -89,20 +89,20 @@ class Pokemon {
         }
 };
 
-
-
-
-
+// Team Class?
 
 
 int main {
     srand(time(0)); // Seeds random number generator using current time
 
     // Define Move Objects
-
+    Move scratch("Scratch", 12, 95);
+    Move quickAttack("Quick Attack", 10, 100);
+    Move ember("Ember", 40, 100);
+    Move thunderbolt("Thunderbolt", 20, 90);
 
     // Define Pokemon Objects
-
-
+    Pokemon charmander("Charmander", 90, {scratch, ember})
+    Pokemon pikachu("")
     // 
 }
