@@ -18,6 +18,24 @@ Response: " #include <iostream>   // For input/output handling
 3. How to create a rand() that gives me a range between 1 - 100. How do i set up a srand?
 Response: "int randomNumber = rand() % 100 + 1; // Generates a random number between 1 and 100"
 
+4. How would I go about implementing a visual HP bar in text form?
+Response: 
+" // Function to display HP bar
+void displayHPBar(int currentHP, int maxHP) {
+    int barWidth = 20;  
+    int filledWidth = (currentHP * barWidth) / maxHP; 
+
+    cout << "[";
+    for (int i = 0; i < barWidth; i++) {
+        if (i < filledWidth) {
+            cout << "█";  
+        } else {
+            cout << "-";  
+        }
+    }
+    cout << "] " << currentHP << "/" << maxHP << " HP" << endl;
+} "
+
 # Ideas/Plans
 Pokemon
 Multiple Pokemon
