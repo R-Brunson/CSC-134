@@ -44,11 +44,12 @@ void displayHPBar(int currentHP, int maxHP) {
     cout << "] " << currentHP << "/" << maxHP << " HP" << endl;
 }
 
-// Pokemon class represents a Pokémon with health and a set of moves
+// Pokemon class represents a Pokemon with health and a set of moves
 class Pokemon {
     public:
         string name; // Pokemon Name
         int health; // Pokemon Hp
+        int maxHealth; // Held value of highest amount of pokemon's health
         vector<Move> moves; // Stores Pokemon's Available Moves (Defined later in main?)
 
         // Constructor for Pokemon initialized with a name, health, and moves
@@ -75,7 +76,7 @@ class Pokemon {
         void takeDamage(int damage) {
         health = health - damage; 
             if (health <= 0) { 
-                health = 0;  
+                health = 0; // sets hp to 0 if "dead", dont want to be negative 
                 cout << name << " has fainted!" << endl; 
             }
         }
@@ -90,19 +91,90 @@ class Pokemon {
 };
 
 // Team Class?
+class Team {
+    public:
+        vector<Pokemon> pokemonList;
+        int activePokemon; // Tracks which Pokemon is currently in battle
 
+        Team(vector<Pokemon> p) {
+            pokemonList = p;
+            activePokemon = 0; // Start with the first Pokemon
+        }
 
-int main {
-    srand(time(0)); // Seeds random number generator using current time
+        Pokemon& getActivePokemon() {
+            return pokemonList[activePokemon];
+        }
+
+        void switchPokemon(int pokemon) {
+            if (pokemon >= 0 && pokemon < pokemonList.size() && pokemonList[pokemon].isAlive()) {
+                activePokemon = pokemon;
+                cout << "Switched to " << pokemonList[activePokemon].name << "!" << endl;
+            } else {
+                cout << "Cannot switch! That Pokémon has fainted or does not exist." << endl;
+            }
+        }
+
+        bool hasAlivePokemon() {
+            for (auto& p : pokemonList) { // : allows for the loop to loop over the entire range of a vector or array
+                if (p.isAlive()) return true;
+            }
+            return false;
+        }
+};
+
+int main() {
+    srand(time(0));  // Seeds the random number generator based on the current time
 
     // Define Move Objects
-    Move scratch("Scratch", 12, 95);
+    Move scratch("Scratch", 12, 95);      // Move name, damage, accuracy
     Move quickAttack("Quick Attack", 10, 100);
     Move ember("Ember", 40, 100);
     Move thunderbolt("Thunderbolt", 20, 90);
 
-    // Define Pokemon Objects
-    Pokemon charmander("Charmander", 90, {scratch, ember})
-    Pokemon pikachu("")
-    // 
+    // Define Pokémon Teams
+    Team playerTeam({Pokemon("Charmander", 90, {scratch, ember}),
+                     Pokemon("Bulbasaur", 100, {scratch, quickAttack})});
+
+    Team enemyTeam({Pokemon("Pikachu", 100, {quickAttack, thunderbolt}),
+                    Pokemon("Squirtle", 110, {scratch, ember})});
+
+    // Battle Loop (Runs until one team runs out of Pokémon)
+    while (playerTeam.hasAlivePokemon() && enemyTeam.hasAlivePokemon()) {
+        cout << "\nYour Active Pokémon: " << playerTeam.getActivePokemon().name << endl;
+        playerTeam.getActivePokemon().displayHP();
+
+        cout << "Opponent's Active Pokémon: " << enemyTeam.getActivePokemon().name << endl;
+        enemyTeam.getActivePokemon().displayHP();
+
+        // Player chooses an action: Attack or Switch Pokémon
+        cout << "\nChoose an action:\n1. Attack\n2. Switch Pokémon\nChoice: ";
+        int action;
+        cin >> action;
+
+        if (action == 1) {  // Player attacks
+            cout << "Choose a move:\n";
+            for (size_t i = 0; i < playerTeam.getActivePokemon().moves.size(); i++) {
+                cout << i + 1 << ". " << playerTeam.getActivePokemon().moves[i].name << "\n";
+            }
+            int moveChoice;
+            cin >> moveChoice;
+            playerTeam.getActivePokemon().attack(enemyTeam.getActivePokemon(), moveChoice - 1);
+        } else if (action == 2) {  // Player switches Pokémon
+            cout << "Choose a Pokémon to switch to:\n";
+            for (size_t i = 0; i < playerTeam.pokemonList.size(); i++) {
+                cout << i + 1 << ". " << playerTeam.pokemonList[i].name << "\n";
+            }
+            int switchChoice;
+            cin >> switchChoice;
+            playerTeam.switchPokemon(switchChoice - 1);
+        }
+
+        // Enemy randomly attacks if still alive
+        if (enemyTeam.getActivePokemon().isAlive()) {
+            enemyTeam.getActivePokemon().attack(playerTeam.getActivePokemon(), rand() % enemyTeam.getActivePokemon().moves.size());
+        }
+    }
+
+    cout << "Battle is over!" << endl;  // Displays end-of-battle message
+    return 0;
 }
