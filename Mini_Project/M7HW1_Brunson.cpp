@@ -131,22 +131,54 @@ int main() {
     Move ember("Ember", 40, 100);
     Move thunderbolt("Thunderbolt", 20, 90);
 
-    // Define Pokémon Teams
-    Team playerTeam({Pokemon("Charmander", 90, {scratch, ember}),
-                     Pokemon("Bulbasaur", 100, {scratch, quickAttack})});
+    // Define Player's Teams of pokemon
+    Team playerTeam({Pokemon("Charmander", 9, {scratch, ember}),
+                     Pokemon("Bulbasaur", 100, {scratch, quickAttack})
+                    }
+    );
 
     Team enemyTeam({Pokemon("Pikachu", 100, {quickAttack, thunderbolt}),
-                    Pokemon("Squirtle", 110, {scratch, ember})});
+                    Pokemon("Squirtle", 110, {scratch, ember})
+                    }
+    );
 
-    // Battle Loop (Runs until one team runs out of Pokémon)
+    // The Actual Loop for Battle
     while (playerTeam.hasAlivePokemon() && enemyTeam.hasAlivePokemon()) {
-        cout << "\nYour Active Pokémon: " << playerTeam.getActivePokemon().name << endl;
-        playerTeam.getActivePokemon().displayHP();
+        cout << "\nYour Active Pokémon: " << playerTeam.getActivePokemon().name << endl; // Lists Player's starting pokemon
+        playerTeam.getActivePokemon().displayHP(); // Finds active pokemon.displays active pokemon's hp.
 
-        cout << "Opponent's Active Pokémon: " << enemyTeam.getActivePokemon().name << endl;
+        cout << "Opponent's Active Pokémon: " << enemyTeam.getActivePokemon().name << endl; // Same as above but opponent's
         enemyTeam.getActivePokemon().displayHP();
 
-        // Player chooses an action: Attack or Switch Pokémon
+    // If Player's Pokemon has died, prompt them to switch
+    if (!playerTeam.getActivePokemon().isAlive()) {
+        if (playerTeam.hasAlivePokemon()) {
+            cout << "\nYour Pokémon has fainted! Choose another Pokémon:\n";
+            for (size_t i = 0; i < playerTeam.pokemonList.size(); i++) {  // I dont fully understand size_t, but copilot pointed it out when reviewing my code. "Prevents accidental negative values in indexing or memory sizes. Helps avoid signed/unsigned comparison issues. Ensures portability across different systems (32-bit vs 64-bit architectures)."
+                if (playerTeam.pokemonList[i].isAlive()) {
+                    cout << i + 1 << ". " << playerTeam.pokemonList[i].name << "\n";
+                }
+            }
+            int switchChoice;
+            cin >> switchChoice;
+            playerTeam.switchPokemon(switchChoice - 1);
+        } else {
+            cout << "All your Pokémon have fainted! You lost the battle." << endl;
+            break;
+        }
+    }
+
+    // If the opponent pokemon died, automatically switch to the next available one
+    if (!enemyTeam.getActivePokemon().isAlive()) {
+        for (size_t i = 0; i < enemyTeam.pokemonList.size(); i++) {
+            if (enemyTeam.pokemonList[i].isAlive()) {
+                enemyTeam.switchPokemon(i);
+                break; // This stops the loop when it finds the next available pokemon, otherwise it keep going and pick the last availabe pokemon (I think?)
+            }
+        }
+    }
+
+        // Player chooses an action -- Attack or Switch Pokemon
         cout << "\nChoose an action:\n1. Attack\n2. Switch Pokémon\nChoice: ";
         int action;
         cin >> action;
@@ -159,22 +191,23 @@ int main() {
             int moveChoice;
             cin >> moveChoice;
             playerTeam.getActivePokemon().attack(enemyTeam.getActivePokemon(), moveChoice - 1);
-        } else if (action == 2) {  // Player switches Pokémon
+        }
+        else if (action == 2) {  // Player switches Pokémon
             cout << "Choose a Pokémon to switch to:\n";
             for (size_t i = 0; i < playerTeam.pokemonList.size(); i++) {
-                cout << i + 1 << ". " << playerTeam.pokemonList[i].name << "\n";
+                cout << i + 1 << ". " << playerTeam.pokemonList[i].name << "\n"; // Lists each pokemon available to swap to
             }
             int switchChoice;
-            cin >> switchChoice;
+            cin >> switchChoice; // player input for switching
             playerTeam.switchPokemon(switchChoice - 1);
         }
 
-        // Enemy randomly attacks if still alive
+        // Enemy attacks if still alive
         if (enemyTeam.getActivePokemon().isAlive()) {
             enemyTeam.getActivePokemon().attack(playerTeam.getActivePokemon(), rand() % enemyTeam.getActivePokemon().moves.size());
         }
     }
 
-    cout << "Battle is over!" << endl;  // Displays end-of-battle message
+    cout << "Battle is over!" << endl;  
     return 0;
 }
