@@ -209,7 +209,7 @@ int main() {
 
         if (action == 1) {  // Player attacks
             cout << "Choose a move:\n";
-            for (size_t i = 0; i < playerTeam.getActivePokemon().moves.size(); i++) {
+            for (size_t i = 0; i < playerTeam.getActivePokemon().moves.size(); i++) { // loop prints all available move for active pokemon
                 cout << i + 1 << ". " << playerTeam.getActivePokemon().moves[i].name << "\n";
             }
             int moveChoice;
