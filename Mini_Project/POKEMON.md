@@ -74,13 +74,16 @@ Fly	70	95% "
 
 
 # Ideas/Plans
-Pokemon 
-Multiple Pokemon
+Pokemon X
+Multiple Pokemon X
 
-Moves
-Multiple Moves per pokemon
-Moves having a power and accuracy system
-Element Resistances/Weaknesses
+Moves X
+Multiple Moves per pokemon X
+Moves having a power and accuracy system X
+Element Resistances/Weaknesses --
 
-Switching Pokemon
-Using Items
+Switching Pokemon X
+Using Items --
+
+-- Future Ideas
+Pokemon stats like attack and defense that plays a part in damage calculations, also speed for attack order
