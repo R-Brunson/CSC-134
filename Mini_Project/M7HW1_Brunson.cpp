@@ -126,19 +126,43 @@ int main() {
     srand(time(0));  // Seeds the random number generator based on the current time
 
     // Define Move Objects
-    Move scratch("Scratch", 12, 95);      // Move name, damage, accuracy
-    Move quickAttack("Quick Attack", 10, 100);
-    Move ember("Ember", 40, 100);
-    Move thunderbolt("Thunderbolt", 20, 90);
+        //Electrode
+        Move thunder("Thunder", 90, 70);      // Move name, damage, accuracy
+        Move zap_cannon("Zap Cannon", 85, 50);
+        //Machamp
+        Move cross_chop("Cross Chop", 75, 80);
+        Move brick_break("Brick Break", 70, 100);
+        Move body_slam("Body Slam", 80, 100);
+        //Gengar
+        Move shadow_ball("Shadow Ball", 75, 100);
+        Move lick("Lick", 30, 100);
+           //thunder(----)
+        //Charizard
+        Move fire_blast("Fire Blast", 90, 85);
+        Move dragon_claw("Brick Break", 70, 100);
+        Move air_slash("Air Slash", 80, 95);
+        //Walrein
+        Move blizzard("Blizzard", 95, 70);
+        Move sheer_cold("Sheer Cold", 1000, 30);
+           //body slam(----)
+        //Dusclops
+           //blizzard(----)
+           //thunder(----)
+        Move shadow_punch("Shadow Punch", 60, 100);
+        Move dynamic_punch("Dynamic Punch", 100, 50);
+        
+
 
     // Define Player's Teams of pokemon
-    Team playerTeam({Pokemon("Charmander", 9, {scratch, ember}),
-                     Pokemon("Bulbasaur", 100, {scratch, quickAttack})
+    Team playerTeam({Pokemon("Charizard", 170, {fire_blast, dragon_claw, air_slash}),
+                     Pokemon("Walrein", 180, {blizzard, sheer_cold, body_slam}),
+                     Pokemon("Dusclops", 120, {blizzard, thunder, shadow_punch, dynamic_punch})
                     }
     );
 
-    Team enemyTeam({Pokemon("Pikachu", 100, {quickAttack, thunderbolt}),
-                    Pokemon("Squirtle", 110, {scratch, ember})
+    Team enemyTeam({Pokemon("Electrode", 120, {zap_cannon, thunder}),
+                    Pokemon("Machamp", 160, {cross_chop, body_slam, brick_break}),
+                    Pokemon("Gengar", 150, {shadow_ball, thunder, lick}),
                     }
     );
 
