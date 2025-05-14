@@ -198,6 +198,7 @@ int main() {
             if (enemyTeam.pokemonList[i].isAlive()) {
                 enemyTeam.switchPokemon(i);
                 break; // This stops the loop when it finds the next available pokemon, otherwise it keep going and pick the last available pokemon
+            }
         }
     }
 
@@ -233,5 +234,5 @@ int main() {
 
     cout << "Battle is over!" << endl;  
     return 0;
-};
 }
+
