@@ -233,4 +233,5 @@ int main() {
 
     cout << "Battle is over!" << endl;  
     return 0;
+};
 }
