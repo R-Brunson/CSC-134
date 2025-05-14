@@ -197,8 +197,7 @@ int main() {
         for (size_t i = 0; i < enemyTeam.pokemonList.size(); i++) {
             if (enemyTeam.pokemonList[i].isAlive()) {
                 enemyTeam.switchPokemon(i);
-                break; // This stops the loop when it finds the next available pokemon, otherwise it keep going and pick the last availabe pokemon (I think?)
-            }
+                break; // This stops the loop when it finds the next available pokemon, otherwise it keep going and pick the last available pokemon
         }
     }
 
